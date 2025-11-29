@@ -11,14 +11,12 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Order from './pages/Order'
 import Collection from "./pages/Collection";
-import Counter from "./pages/Counter";
-import Theme from "./pages/Theme";
+;
 
 const App = () => {
   return (
     <div>
-      {/* <Theme/> */}
-      <Counter/>
+    
     <Navbar/>
       <Routes>
       <Route path="/" element={<Home />}></Route>
