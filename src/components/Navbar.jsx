@@ -3,6 +3,7 @@ import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import Home from "../pages/Home";
 
+
 const Navbar = () => {
   const [visible, SetVisible] = useState(false);
   return (
