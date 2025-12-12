@@ -15,13 +15,15 @@ const Footer = () => {
             offers, and experience smooth online shopping like never before.
           </p>
         </div>
-        <div>
+        <div> 
           <p className="text-xl font-medium mb-5 ">FOREVER</p>
           <ul className="flex flex-col gap-1 text-gray-700">
             <li>Home</li>
             <li>About us</li>
             <li>Delivery</li>
             <li>Privacy Policy</li>
+
+            {/* herlooooo */}
           </ul>
         </div>
 
