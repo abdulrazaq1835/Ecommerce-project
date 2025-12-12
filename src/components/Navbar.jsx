@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { use, useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import Home from "../pages/Home";
+import { ShopContext } from "../context/ShopContext";
 
 
-const Navbar = () => {
+const Navbar = () => { 
   const [visible, SetVisible] = useState(false);
+  const  {setShowSearch,getCartCount}= useContext(ShopContext)
   return (
     <div className="flex items-center justify-between py-5   px-4 font-bold">
      <Link to={'/'}> <img src={assets.logo} alt="logo"></img></Link>
@@ -30,7 +32,7 @@ const Navbar = () => {
       </ul>
 
       <div className=" flex items-center gap-6">
-        <img src={assets.search_icon} className="w-5 cursor-pointer"></img>
+        <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className="w-5 cursor-pointer"></img>
         <div className="group relative">
           <img
             className="w-5 cursor-pointer "
@@ -45,10 +47,10 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <Link to={"/cart"} className="relative">
+        <Link  to={"/cart"} className="relative">
           <img src={assets.cart_icon} className="w-5 cursor-pointer"></img>
           <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
-            10
+            {getCartCount()}
           </p>
         </Link>
         <img
@@ -78,7 +80,7 @@ const Navbar = () => {
             </div>
           
           <NavLink onClick={()=>SetVisible(false)} to={'/'} className="py-2 pl-6 border">HOME</NavLink>
-           <NavLink onClick={()=>SetVisible(false)} to={'/colectiom'} className="py-2 pl-6 border">COLLECTION</NavLink>
+           <NavLink onClick={()=>SetVisible(false)} to={'/collection'} className="py-2 pl-6 border">COLLECTION</NavLink>
             <NavLink onClick={()=>SetVisible(false)} to={'/about'} className="py-2 pl-6 border">ABOUT</NavLink>
              <NavLink  onClick={()=>SetVisible(false)} to={'/contact'} className="py-2 pl-6 border">CONTACT</NavLink>
 
