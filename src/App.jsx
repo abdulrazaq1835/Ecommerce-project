@@ -19,6 +19,10 @@ import SearchBar from "./components/SearchBar";
 ;
 
 const App = () => {
+  useEffect(() => {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.style.colorScheme = 'light';
+  }, [])
   return (
     <div>
     <ToastContainer/>

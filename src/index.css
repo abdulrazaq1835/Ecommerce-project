@@ -21,3 +21,28 @@ a.active hr{
     color:white;
    }
 }
+
+
+
+@layer base {
+  * {
+    color-scheme: light !important;
+  }
+  
+  html {
+    color-scheme: light;
+  }
+  
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+/* Prevent dark mode from system preferences */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    color-scheme: light !important;
+    background-color: white !important;
+    color: black !important;
+  }
+}
