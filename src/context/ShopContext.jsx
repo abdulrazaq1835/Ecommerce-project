@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 
 export const ShopContext = createContext();
 
+
+
 const ShopContextProvider = (props) => {
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
